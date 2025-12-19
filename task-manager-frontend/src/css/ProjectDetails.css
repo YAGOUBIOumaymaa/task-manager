@@ -1,0 +1,59 @@
+
+.project-container {
+   padding-top: 100px; 
+  padding-bottom: 1rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-search input {
+  border-width: 2px;
+}
+
+.project-card {
+  margin-bottom: 1rem;
+}
+
+
+.modal-overlay {
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content-custom {
+  border-radius: 8px;
+}
+
+
+.modal-header-custom h5 {
+  margin: 0;
+}
+
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.btn-create {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.btn-create:hover {
+  background-color: #0b5ed7;
+}
+
+
+.modal-input,
+.modal-textarea {
+  margin-bottom: 1rem;
+}
