@@ -5,6 +5,7 @@ import TaskItem from "../components/TaskItem";
 import ProgressBar from "../components/ProgressBar";
 
 import '../css/ProjectDetails.css';
+
 const AddTaskModal = ({ show, onClose, onSubmit, formData, setFormData }) => {
   if (!show) return null;
 
@@ -65,13 +66,14 @@ const AddTaskModal = ({ show, onClose, onSubmit, formData, setFormData }) => {
   );
 };
 
-
 const ProjectDetails = () => {
   const { id } = useParams();
 
   const [project, setProject] = useState({ title: "", description: "" });
   const [tasks, setTasks] = useState([]);
   const [progress, setProgress] = useState(0);
+  const [totalTasks, setTotalTasks] = useState(0);
+  const [completedTasks, setCompletedTasks] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -83,7 +85,6 @@ const ProjectDetails = () => {
     await Promise.all([fetchProject(), fetchTasks(), fetchProgress()]);
   };
 
-  
   const fetchProject = async () => {
     try {
       const response = await api.get(`/projects/${id}`);
@@ -92,8 +93,6 @@ const ProjectDetails = () => {
       console.error("Failed to fetch project details");
     }
   };
-
-
 
   const fetchTasks = async () => {
     try {
@@ -107,17 +106,23 @@ const ProjectDetails = () => {
     }
   };
 
-  
   const fetchProgress = async () => {
     try {
       const response = await api.get(`/projects/${id}/progress`);
-      setProgress(response.data.progress);
-    } catch {
-      console.error("Failed to fetch progress");
+      const data = response.data;
+      
+      setProgress(data.progress);
+      setTotalTasks(data.totalTasks);
+      setCompletedTasks(data.completedTasks);
+      
+    } catch (error) {
+      console.error("Failed to fetch progress:", error);
+      setProgress(0);
+      setTotalTasks(0);
+      setCompletedTasks(0);
     }
   };
 
- 
   const addTask = async () => {
     try {
       await api.post(`/projects/${id}/tasks`, {
@@ -128,14 +133,12 @@ const ProjectDetails = () => {
 
       setTaskForm({ taskTitle: "", taskDescription: "", taskDueDate: "" });
       setShowModal(false);
-
       refreshProjectData();
     } catch {
       alert("Failed to add task");
     }
   };
 
-  
   const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -147,10 +150,11 @@ const ProjectDetails = () => {
   return (
     <div className="container project-container">
 
-      {/* HEADER */}
       <div className="project-header">
         <h2>{project.title || `Project #${id}`}</h2>
-        <button className="btn btn-primary" onClick={() => setShowModal(true)}>➕ Add Task</button>
+        <button className="btn btn-primary" onClick={() => setShowModal(true)}>
+          ➕ Add Task
+        </button>
       </div>
 
       {/* SEARCH */}
@@ -166,12 +170,42 @@ const ProjectDetails = () => {
 
       {error && <div className="alert alert-danger">{error}</div>}
 
-      {/* PROGRESS */}
+      {}
       <div className="card project-card">
         <div className="card-body">
-          <h5>Project Progress</h5>
-          <ProgressBar value={progress} />
-          <small className="text-muted">{progress}% completed</small>
+          <h5 className="card-title mb-3">Project Progress</h5>
+          
+          {/* Barre de progression avec pourcentage à droite */}
+          <div className="d-flex align-items-center mb-4">
+            <div className="flex-grow-1 me-3">
+              <ProgressBar value={progress} />
+            </div>
+            <div className="progress-percentage">
+              <span className="percentage-value">{progress}%</span>
+            </div>
+          </div>
+          
+          {/* Statistiques simples */}
+          <div className="progress-stats">
+            <div className="stat-item">
+              <div className="stat-label">Total Tasks</div>
+              <div className="stat-value total">{totalTasks}</div>
+            </div>
+            
+            <div className="stat-divider"></div>
+            
+            <div className="stat-item">
+              <div className="stat-label">Completed</div>
+              <div className="stat-value completed">{completedTasks}</div>
+            </div>
+            
+            <div className="stat-divider"></div>
+            
+            <div className="stat-item">
+              <div className="stat-label">Pending</div>
+              <div className="stat-value pending">{totalTasks - completedTasks}</div>
+            </div>
+          </div>
         </div>
       </div>
 
