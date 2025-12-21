@@ -54,7 +54,7 @@ CREATE DATABASE task_manager;
 
 src/main/resources/application.properties
 
-#Run Backend
+## Run Backend
 
 ./gradlew bootRun
 
@@ -76,11 +76,12 @@ http://localhost:5173
 ## Authentication
 
 Email: test@example.com
+
 Password: password123
 
 
-##Project Progress
-Project Progress
+## Project Progress
+
 
 For each project, the application calculates:
 
