@@ -68,7 +68,7 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // 🔥 OBLIGATOIRE
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() 
                         .requestMatchers("/api/auth/**", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -77,13 +77,6 @@ public class SecurityConfig {
 
         return http.build();
     }
-
-}
-
-
-
-
-
 
 
     
