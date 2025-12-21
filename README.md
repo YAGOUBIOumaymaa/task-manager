@@ -1,12 +1,23 @@
 #  task-manager
 ## Description du projet
 This project consists of developing a full-stack web application for project and task management with an authentication system.
-## Stack Technique 
--Spring Boot 3.2.0
--Java 17 
--Gradle 8.5  
--MySql 
--Spring Security  
+
+## Tech Stack
+
+### Backend
+- Spring Boot 3.2.0
+- Java 17
+- Gradle 8.5
+- Spring Security
+- JWT Authentication
+
+### Frontend
+- Vue.js
+- Vite
+- Axios
+
+### Database
+- MySQL
 
 ##  Fonctionnalités principales
 
