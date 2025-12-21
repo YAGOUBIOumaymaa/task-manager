@@ -66,7 +66,9 @@ http://localhost:8080
 ## Frontend Setup
 
 cd frontend
+
 npm install
+
 npm run dev
 
 
@@ -92,7 +94,6 @@ Number of completed tasks
 
 Progress percentage
 
-Progress percentage
    
 
 
