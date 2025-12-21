@@ -42,12 +42,13 @@ Automatic calculation of project progress
 
 
 git clone https://github.com/YAGOUBIOumaymaa/task-manager.git
+
 cd task-manager
 
 
 
 ##  Database Configuration
-###Create a MySQL database:
+### Create a MySQL database:
 
 CREATE DATABASE task_manager;
 ### Update database credentials in:
@@ -62,7 +63,7 @@ src/main/resources/application.properties
 
 http://localhost:8080
 
-#Frontend Setup
+## Frontend Setup
 
 cd frontend
 npm install
