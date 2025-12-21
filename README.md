@@ -105,18 +105,26 @@ POST   ➜  /api/auth/login           ➜  Connexion utilisateur
 ###  PROJETS
 
 GET    ➜  /projects                 ➜  Liste des projets
+
 POST   ➜  /projects                 ➜  Créer un projet
+
 GET    ➜  /projects/{id}            ➜  Détails d'un projet
+
 DELETE ➜  /projects/{id}            ➜  Supprimer un projet
+
 GET    ➜  /projects/{projectId}/progress  ➜  Progression du projet
 
 
 ###  TÂCHES   
 
 GET    ➜  /projects/{projectId}/tasks       ➜  Liste des tâches
+
 POST   ➜  /projects/{projectId}/tasks       ➜  Créer une tâche
+
 GET    ➜  /projects/{projectId}/tasks/{taskId}  ➜  Détails d'une tâche
+
 PUT    ➜  /projects/{projectId}/tasks/{taskId}  ➜  Modifier une tâche
+
 DELETE ➜  /projects/{projectId}/tasks/{taskId}  ➜  Supprimer une tâche
 
 
