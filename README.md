@@ -43,11 +43,56 @@ Automatic calculation of project progress
 
 git clone https://github.com/YAGOUBIOumaymaa/task-manager.git
 cd task-manager
-## The backend will run on:
+
+
+
+##  Database Configuration
+###Create a MySQL database:
+
+CREATE DATABASE task_manager;
+### Update database credentials in:
+
+src/main/resources/application.properties
+
+#Run Backend
+
+./gradlew bootRun
+
+### Backend will run on:
 
 http://localhost:8080
 
-## The frontend will run on:
+#Frontend Setup
+
+cd frontend
+npm install
+npm run dev
+
+
+### Frontend will run on:
 
 http://localhost:5173
+
+## Authentication
+
+Email: test@example.com
+Password: password123
+
+
+##Project Progress
+Project Progress
+
+For each project, the application calculates:
+
+Total number of tasks(on backend)
+
+Number of completed tasks
+
+Progress percentage
+
+Progress percentage
+   
+
+
+
 
