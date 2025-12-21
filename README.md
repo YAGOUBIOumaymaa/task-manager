@@ -12,7 +12,7 @@ This project consists of developing a full-stack web application for project and
 - JWT Authentication
 
 ### Frontend
-- Vue.js
+- React
 - Vite
 - Axios
 
