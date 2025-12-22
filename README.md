@@ -66,7 +66,7 @@ http://localhost:8080
 
 ## Frontend Setup
 
-cd frontend
+cd task-manager-frontend
 
 npm install
 
@@ -89,7 +89,7 @@ Password: password123
 
 For each project, the application calculates:
 
-Total number of tasks(on backend)
+Total number of tasks
 
 Number of completed tasks
 
