@@ -2,7 +2,11 @@
 ## Description du projet
 This project consists of developing a full-stack web application for project and task management with an authentication system.
 
-## Tech Stack
+## Demo
+
+https://drive.google.com/drive/folders/1tMezDRaI1R6hUkrZwXKtbhWsQDkTVMnn?usp=drive_link
+
+## Technologies Used
 
 ### Backend
 - Spring Boot 3.2.0
@@ -15,11 +19,12 @@ This project consists of developing a full-stack web application for project and
 - React
 - Vite
 - Axios
+- Tailwind CSS
 
 ### Database
 - MySQL
 
-##  Fonctionnalités principales
+##  Features
 
 User authentication (login with email and password)
 
