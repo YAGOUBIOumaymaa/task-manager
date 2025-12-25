@@ -100,12 +100,12 @@ Number of completed tasks
 
 Progress percentage
 
-##Task Manager Endpoints
-##AUTHENTICATION
+## Task Manager Endpoints
+## AUTHENTICATION
 
 POST ➜ /api/auth/login ➜ User login
 
-##PROJECTS
+## PROJECTS
 
 GET ➜ /projects ➜ List projects
 
@@ -117,7 +117,7 @@ DELETE ➜ /projects/{id} ➜ Delete a project
 
 GET ➜ /projects/{projectId}/progress ➜ Project progress
 
-##TASKS
+## TASKS
 
 GET ➜ /projects/{projectId}/tasks ➜ List tasks
 
