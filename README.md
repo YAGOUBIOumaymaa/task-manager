@@ -100,38 +100,34 @@ Number of completed tasks
 
 Progress percentage
 
+##Task Manager Endpoints
+##AUTHENTICATION
 
-## Endpoints Task Manager
+POST ➜ /api/auth/login ➜ User login
 
-###  AUTHENTIFICATION
+##PROJECTS
 
-POST   ➜  /api/auth/login           ➜  Connexion utilisateur
+GET ➜ /projects ➜ List projects
 
-###  PROJETS
+POST ➜ /projects ➜ Create a project
 
-GET    ➜  /projects                 ➜  Liste des projets
+GET ➜ /projects/{id} ➜ Project details
 
-POST   ➜  /projects                 ➜  Créer un projet
+DELETE ➜ /projects/{id} ➜ Delete a project
 
-GET    ➜  /projects/{id}            ➜  Détails d'un projet
+GET ➜ /projects/{projectId}/progress ➜ Project progress
 
-DELETE ➜  /projects/{id}            ➜  Supprimer un projet
+##TASKS
 
-GET    ➜  /projects/{projectId}/progress  ➜  Progression du projet
+GET ➜ /projects/{projectId}/tasks ➜ List tasks
 
+POST ➜ /projects/{projectId}/tasks ➜ Create a task
 
-###  TÂCHES   
+GET ➜ /projects/{projectId}/tasks/{taskId} ➜ Task details
 
-GET    ➜  /projects/{projectId}/tasks       ➜  Liste des tâches
+PUT ➜ /projects/{projectId}/tasks/{taskId} ➜ Update a task
 
-POST   ➜  /projects/{projectId}/tasks       ➜  Créer une tâche
-
-GET    ➜  /projects/{projectId}/tasks/{taskId}  ➜  Détails d'une tâche
-
-PUT    ➜  /projects/{projectId}/tasks/{taskId}  ➜  Modifier une tâche
-
-DELETE ➜  /projects/{projectId}/tasks/{taskId}  ➜  Supprimer une tâche
-
+DELETE ➜ /projects/{projectId}/tasks/{taskId} ➜ Delete a task
 
 
 
